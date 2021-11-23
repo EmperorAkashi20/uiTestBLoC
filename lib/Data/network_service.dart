@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:uitest_bloc/Data/Models/list_view_response_model.dart';
 
 class NetworkService {
   final baseUrl =
@@ -12,10 +13,17 @@ class NetworkService {
         "Authorization":
             "CIGfMA0GCSqGSIb3DQEBAQdqDup1pgSc0tQUMQUAA4GNADCBiQKBgQD3apAg6H2i"
       });
-      print(response.body);
-      return jsonDecode(response.body) as List;
+      Map<String, dynamic> dataMap = jsonDecode(response.body);
+      // print(dataMap);
+      Map<String, dynamic> servicesData = dataMap["data"];
+      // print(servicesData);
+      List<dynamic> servicesList = servicesData["services"];
+      return servicesList
+          .map((e) => AirConditionerResponseModel.fromJson(e))
+          .toList();
+      // return jsonDecode(response.body);
     } catch (e) {
-      print(e);
+      // print(e);
       return [];
     }
   }
