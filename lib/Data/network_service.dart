@@ -7,7 +7,7 @@ class NetworkService {
   final baseUrl =
       "http://customer_server.maharah.neumtech.net/api/Vendors/testAPI";
 
-  Future<List<dynamic>> fetchListViewData() async {
+  Future<Map<String, dynamic>> fetchListViewData() async {
     try {
       final response = await get(Uri.parse(baseUrl), headers: {
         "Authorization":
@@ -18,13 +18,12 @@ class NetworkService {
       Map<String, dynamic> servicesData = dataMap["data"];
       // print(servicesData);
       List<dynamic> servicesList = servicesData["services"];
-      return servicesList
-          .map((e) => AirConditionerResponseModel.fromJson(e))
-          .toList();
+      return dataMap;
       // return jsonDecode(response.body);
     } catch (e) {
       // print(e);
-      return [];
+      // print(e);
+      return {};
     }
   }
 }

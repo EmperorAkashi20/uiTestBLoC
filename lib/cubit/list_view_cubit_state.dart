@@ -10,7 +10,7 @@ abstract class ListViewCubitState extends Equatable {
 class ListViewCubitInitial extends ListViewCubitState {}
 
 class ListViewCubitLoaded extends ListViewCubitState {
-  final List<AirConditionerResponseModel>? listViewItems;
+  final Map<String, dynamic>? listViewItems;
 
   const ListViewCubitLoaded({this.listViewItems});
 }

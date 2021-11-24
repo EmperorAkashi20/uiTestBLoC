@@ -11,43 +11,32 @@ class AddButton extends StatefulWidget {
   final double windowHeight;
   final double windowWidth;
   final Function onPressed;
-  Color color = Colors.grey.shade300;
-  int pressed = 1;
-  String text = 'Add';
 
   @override
   State<AddButton> createState() => _AddButtonState();
 }
 
 class _AddButtonState extends State<AddButton> {
+  bool isSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (widget.pressed == 1) {
-          setState(() {
-            widget.color = Colors.yellow;
-            widget.text = 'Added';
-            widget.pressed = 2;
-          });
-        } else if (widget.pressed == 2) {
-          setState(() {
-            widget.color = Colors.grey.shade300;
-            widget.text = 'Add';
-            widget.pressed = 1;
-          });
-        }
+        setState(() {
+          isSelected = !isSelected;
+        });
       },
       child: Container(
         height: widget.windowHeight * 0.04,
         width: widget.windowWidth * 0.2,
         decoration: BoxDecoration(
-          color: widget.color,
+          color: isSelected == true ? Colors.yellow : Colors.grey.shade300,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Center(
           child: Text(
-            widget.text,
+            isSelected == true ? "Added" : "Add",
             style: TextStyle(
               fontSize: widget.windowHeight * 0.02,
               fontWeight: FontWeight.w400,

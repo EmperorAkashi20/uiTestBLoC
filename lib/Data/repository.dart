@@ -6,10 +6,8 @@ class Repository {
 
   Repository({this.networkService});
 
-  Future<List<AirConditionerResponseModel>> fetchListViewData() async {
+  Future<Map<String, dynamic>> fetchListViewData() async {
     final listViewDataRaw = await networkService!.fetchListViewData();
-    return listViewDataRaw
-        .map((e) => AirConditionerResponseModel.fromJson(e))
-        .toList();
+    return listViewDataRaw;
   }
 }
