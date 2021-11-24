@@ -6,11 +6,15 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+This is a single page application with no requirements of any authorization.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+For running the application:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. You will need flutter installed on your system.
+2. You will need a physical devices / iOS simulator(Only Mac) / anroid emulator / physical device.
+3. Once you have everything, you can run the code either in debug mode or you can create a public build and install it on your physical device.
+4. To create an apk file, on the terminal, navigate to the root of project, then type --> flutter build apk --release.
+
+![alt text](https://github.com/EmperorAkashi20/uiTestBLoC/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202021-11-24%20at%2012.39.25.png?raw=true)
+
+![alt text](https://github.com/EmperorAkashi20/uiTestBLoC/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202021-11-24%20at%2012.39.27.png?raw=true)
